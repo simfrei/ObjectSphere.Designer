@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit</title>
+    
+    <link href="css/style.css" rel="stylesheet" />
+
+    <link href="css/jScrollPane.css" rel="stylesheet" />
+    <link href="css/uniform.default.css" rel="stylesheet" />
+    <link href="css/jquery-ui-1.9.2.custom.css" rel="stylesheet" />
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <script src="js/jquery-1.8.3.min.js"></script>
+    <script src="js/jquery-ui-1.9.2.custom.min.js"></script>
+    <script src="js/jquery.debounce-1.0.5.js"></script>
+    <script src="js/jquery.mousewheel.js"></script>
+    <script src="js/jquery.placeholder.min.js"></script>
+    <script src="js/dragscrollable.js"></script>
+    <script src="js/scrollsync.js"></script>
+    <script src="js/special.js"></script>
+    <script src="js/jScrollPane.js"></script>
+    <script src="js/jquery.uniform.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/jquery.ThreeDots.min.js"></script>
+
+</head>
+
+<script type="text/javascript">
+
+  
+</script>
+<body>
+<div id="loading">
+	<div class="loading_center">
+     <img src="images/spinner_white_loading.gif" width="60" height="60">
+   <br>loading
+    </div>
+</div>  
+
+<div id="modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"></div>
+    <div id="header">
+        <div id="header_title"><div class="maintitle">OS Draw</div><div class="subtitle"></div><div class="header_version">Version 1.0 / 23.06.2012</div></div>
+        <div id="header_logo"><img src="images/header_logo.png"/></div>
+    </div>
+    <div id="content">
+        <div id="appwrapper">
+            <div id="menu">
+                <div class="box">
+                    <ul class="menuicons">
+                        <li class="menuiconnewdoc"><a  rel="popover" id="popovernewdoc" href="#">New Draw</a></li>
+                        <li class="menuiconnewobj"><a href="#">New Object</a></li>
+                        <li class="menuicondivider">&nbsp;</li>
+                        <li class="menuiconsaveas"><a href="#" rel="popover" id="popoversaveas">Save as</a></li>
+                        <li class="menuiconsave"><a href="#" rel="popover" id="popoversave">Save</a></li>
+                        <li class="menuiconmanage"><a href="#" rel="popover" id="popovermanage">Manage</a></li>
+                        <li class="menuiconprint"><a href="#">Print</a></li>
+                        <li class="menuiconexport"><a href="#" rel="popover" id="popoverexport">Export</a></li>
+                    </ul>
+                </div>
+                <div class="boxfooter"></div>
+            </div>
+            <div id="middlewrapper">
+                <div id="objects">
+                    <div id="objects_content">
+                        <div class="objectstitle">
+                            <div class="objectstitleicon"><img class="svgtitle" src="images/svgs/icon_person_pink.svg" border="0" /></div>
+                            <div class="objectstitletext">Max Muster</div>
+                            <div class="objectstitleoptions"><a href="#" rel="popover" id="popoverobject"><img src="images/icon_objects_title_more.png" /></a></div>
+                            <div style="clear:both;"></div>
+                        </div>
+                        <div class="objectscontainer">
+                            <div id="objectscontainer-tabs">
+                                <div class="tab tab1 first active">Objektyp</div><div class="tab tab2">Connections</div>
+                            </div>     
+                            <div id="objectscontainer-tabs-content">     
+                                <div class="tabs-content scroll-pane">          
+                                    <div id="objectscontainer-tabs-content-accordion">
+                                       <div class="box active">
+                                            <div class="box_title">Interface</div>
+                                            <div class="box_content">
+                                                <p>
+                                                    <img src="images/objects_dummy.png" />
+                                                    <img src="images/objects_dummy.png" />
+                                                </p>
+                                            </div>
+                                        </div>
+                                       <div class="box">
+                                            <div class="box_title">Bug Reports</div>
+                                            <div class="box_content">
+                                                 <p>
+                                                     <img src="images/objects_dummy.png" /> 
+                                                 </p>
+                                            </div>
+                                       </div>
+                                       <div class="box">
+                                            <div class="box_title">Bug Reports</div>
+                                            <div class="box_content">
+                                                 <p>
+                                                     <img src="images/objects_dummy.png" /> 
+                                                 </p>
+                                            </div>
+                                       </div>
+                                       <div class="box">
+                                            <div class="box_title">Bug Reports</div>
+                                            <div class="box_content">
+                                                 <p>
+                                                     <img src="images/objects_dummy.png" /> 
+                                                 </p>
+                                            </div>
+                                       </div>
+                                       <div class="box">
+                                            <div class="box_title">Bug Reports</div>
+                                            <div class="box_content">
+                                                 <p>
+                                                     <img src="images/objects_dummy.png" /> 
+                                                 </p>
+                                            </div>
+                                       </div>
+                                       <div class="box">
+                                            <div class="box_title">Bug Reports</div>
+                                            <div class="box_content">
+                                                 <p>
+                                                     <img src="images/objects_dummy.png" /> 
+                                                 </p>
+                                            </div>
+                                        </div>
+                                    </div><br />                              
+                                </div>
+                                <div class="tabs-content scroll-pane" style="display:none;">
+                                   <p>Morbi tincidunt, dui sit amet facilisis feugiat, odio metus gravida ante, ut pharetra massa metus id nunc. Morbi tincidunt, dui sit amet facilisis feugiat, odio metus gravida ante, ut pharetra massa metus id nunc. Morbi tincidunt, dui sit amet facilisis feugiat, odio metus gravida ante, ut pharetra massa metus id nunc. Morbi tincidunt, dui sit amet facilisis feugiat, odio metus gravida ante, ut pharetra massa metus id nunc. Morbi tincidunt, dui sit amet facilisis feugiat, odio metus gravida ante, ut pharetra massa metus id nunc. Morbi tincidunt, dui sit amet facilisis feugiat, odio metus gravida ante, ut pharetra massa metus id nunc. Morbi tincidunt, dui sit amet facilisis feugiat, odio metus gravida ante, ut pharetra massa metus id nunc. Morbi tincidunt, dui sit amet facilisis feugiat, odio metus gravida ante, ut pharetra massa metus id nunc. Morbi tincidunt, dui sit amet facilisis feugiat, odio metus gravida ante, ut pharetra massa metus id nunc. Morbi tincidunt, dui sit amet facilisis feugiat, odio metus gravida ante, ut pharetra massa metus id nunc. Morbi tincidunt, dui sit amet facilisis feugiat, odio metus gravida ante, ut pharetra massa metus id nunc. Morbi tincidunt, dui sit amet facilisis feugiat, odio metus gravida ante, ut pharetra massa metus id nunc. Morbi tincidunt, dui sit amet facilisis feugiat, odio metus gravida ante, ut pharetra massa metus id nunc. Morbi tincidunt, dui sit amet facilisis feugiat, odio metus gravida ante, ut pharetra massa metus id nunc. Morbi tincidunt, dui sit amet facilisis feugiat, odio metus gravida ante, ut pharetra massa metus id nunc. Morbi tincidunt, dui sit amet facilisis feugiat, odio metus gravida ante, ut pharetra massa metus id nunc. Morbi tincidunt, dui sit amet facilisis feugiat, odio metus gravida ante, ut pharetra massa metus id nunc. Morbi tincidunt, dui sit amet facilisis feugiat, odio metus gravida ante, ut pharetra massa metus id nunc. Morbi tincidunt, dui sit amet facilisis feugiat, odio metus gravida ante, ut pharetra massa metus id nunc. Morbi tincidunt, dui sit amet facilisis feugiat, odio metus gravida ante, ut pharetra massa metus id nunc. Morbi tincidunt, dui sit amet facilisis feugiat, odio metus gravida ante, ut pharetra massa metus id nunc. Morbi tincidunt, dui sit amet facilisis feugiat, odio metus gravida ante, ut pharetra massa metus id nunc. Morbi tincidunt, dui sit amet facilisis feugiat, odio metus gravida ante, ut pharetra massa metus id nunc. Morbi tincidunt, dui sit amet facilisis feugiat, odio metus gravida ante, ut pharetra massa metus id nunc.<br /><br /></p>
+                                </div>
+                           </div>
+                            <div id="objectsnew"  onclick="loadModal('modal_obj_new.html')">
+                                <div class="shadow">&nbsp;</div>
+                                <div class="objectsnewbutton">
+                                   <span>Add Object / Relation</span> 
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel_content_loader">
+                            <img src="images/spinner_black.gif" width="27" height="27" />
+                        </div>
+                    </div>
+                    <div id="objects_arrow"></div>
+                </div>
+                <div id="app">
+                    <div id="viewport" >
+		                    <div id="base" class="dragger">
+                                <div class="dragElement" style="top:50px; left: 50px;"><img src="images/svgs/icon_person.svg" /></div>
+                                <div class="dragElement" style="top:100px; left: 100px;"><img src="images/svgs/icon_person.svg" /></div>
+                                <div class="dragElement" style="top:140px; left: 50px;"><img src="images/svgs/icon_person.svg" /></div>
+                                <div class="dragElement" style="top:200px; left: 300px;"><img src="images/svgs/icon_person.svg" /></div>
+                                <div class="dragElement" style="top:20px; left: 230px;"><img src="images/svgs/icon_person.svg" /></div>
+                                <div class="dragElement" style="top:200px; left: 400px;"><img src="images/svgs/icon_person.svg" /></div>
+                                <div class="dragElement" style="top:250px; left: 500px;"><img src="images/svgs/icon_person.svg" /></div>
+                                <div class="dragElement" style="top:300px; left: 300px;"><img src="images/svgs/icon_person.svg" /></div>
+                                <div class="dragElement" style="top:250px; left: 20px;"><img src="images/svgs/icon_person.svg" /></div>
+                                <div class="dragElement" style="top:70px; left: 600px;"><img src="images/svgs/icon_person.svg" /></div>
+                                <div class="dragElement" style="top:270px; left: 100px;"><img src="images/svgs/icon_person.svg" /></div>
+                                <div class="dragElement" style="top:100px; left: 200px;"><img src="images/svgs/icon_person.svg" /></div>
+                                <div class="dragElement" style="top:300px; left: 200px;"><img id="testing" src="images/svgs/icon_person.svg" border="0" /><div class="textcontainer" title="This is a very fucking long text that sucks!" ><span class='ellipsis_text'>This is a very fucking long  text that sucks!</span></div></div>
+		                    </div>
+	                  </div>
+                    <div id="options">
+                        <div class="boxheader"></div>
+                        <div class="box">
+                            <div id="sliders">
+                                <div class="slider-label">Labels</div>
+                                <div class="slider-frame">
+                                    <span class="slider-button on">ON</span>
+                                </div>
+                                <input type="checkbox" checked="checked" style="display:none"/>
+                                <!--
+                                 <div class="slider-label">Arrows</div>
+                                <div class="slider-frame">
+                                
+                                    <span class="slider-button">OFF</span>
+                                </div>
+                                <input type="checkbox"  style="display:none"/>
+                                -->
+                            </div>
+                              <div id="zoom">
+                                 <div class="zoom-plus" onclick="scaleBase('plus')"><img src="images/icon_options_zoom-plus.png" border="0" /></div>
+                                 <div class="zoom-minus" onclick="scaleBase('minus')"><img src="images/icon_options_zoom-minus.png" border="0" /></div>
+                                 <div class="zoom-reset" onclick="scaleBase('reset')"><img src="images/icon_options_zoom-reset.png" border="0" /></div>
+                            </div>
+                              <div id="clear">
+                            	<img onclick="alert('Hallo Fabio :)');" src="images/icon_options_clear.png" width="91" height="22">
+                              </div>
+                        </div>
+                    </div>
+		        </div>
+                <div id="properties">
+                    <div id="properties_arrow"></div>
+                    <div id="properties_content">
+                        <div class="propertiestitle">
+                            <div class="propertiestitleicon"><img class="svgtitle" src="images/svgs/icon_person_pink.svg" /></div>
+                            <div class="propertiestitletext">Max Muster</div>
+                            <div style="clear:both;"></div>
+                        </div>
+                        <div id="propertiescontainer" class="scroll-pane">
+                             <label for="male">Name</label>
+                             <input type="text" name="sex" id="male" class="required" value="Max Muster"/>
+                             <label for="male">Vorname</label>
+                             <input type="text" name="sex" id="Text1" value="Max"/>
+                             <label for="area">Textarea</label>
+                            <textarea  rows="4">asdfasdf</textarea>
+                             <label for="male">Vorname</label>
+                             <input type="text" name="sex" id="Text2" value="Muster"/>
+                             <label for="male">Vorname</label>
+                             <div class="calendar">
+                                 <input  type="text" name="sex" id="datepicker" class="date" value="23.06.1982 "/>
+                             </div>
+                            <div style="clear:both;"></div>
+
+                            <div class="checkbox">
+                                <div class="checkboxbox">
+                                    <input type="checkbox" class="uniform" name="sex" id="Text4" value="Max"/>
+                                </div>
+                                <div class="checkboxtext">Labeltext</div>
+                                <div style="clear:both;"></div>
+                            </div>
+                            <br /> <br />
+                            <div class="checkbox">
+                                <div class="checkboxbox">
+                                    <input type="checkbox" class="uniform" name="sex" id="Checkbox1" value="Max"/>
+                                </div>
+                                <div class="checkboxtext">Labeltext</div>
+                                <div style="clear:both;"></div>
+                            </div>
+                                <br /> <br />
+                            <div class="checkbox">
+                                <div class="checkboxbox">
+                                    <input type="checkbox" class="uniform" name="sex" id="Checkbox2" value="Max"/ checked="checked">
+                                </div>
+                                <div class="checkboxtext">Labeltext</div>
+                                <div style="clear:both;"></div>
+                            </div>
+                                <br /> <br />
+                            <div class="checkbox">
+                                <div class="checkboxbox">
+                                    <input type="checkbox" class="uniform" name="sex" id="Checkbox3" value="Max"/>
+                                </div>
+                                <div class="checkboxtext">Labeltext</div>
+                                <div style="clear:both;"></div>
+                            </div>
+                                <br /> <br />
+                            <div class="checkbox">
+                                <div class="checkboxbox">
+                                    <input type="checkbox" class="uniform" name="sex" id="Checkbox4" value="Max"/>
+                                </div>
+                                <div class="checkboxtext">Labeltext</div>
+                                <div style="clear:both;"></div>
+                            </div>
+                                <br /> <br />
+                            <div class="checkbox">
+                                <div class="checkboxbox">
+                                    <input type="checkbox" class="uniform" name="sex" id="Checkbox5" value="Max"/>
+                                </div>
+                                <div class="checkboxtext">Labeltext</div>
+                                <div style="clear:both;"></div>
+                            </div>
+                                <br /> <br />
+                            <div class="checkbox">
+                                <div class="checkboxbox">
+                                    <input type="checkbox" class="uniform" name="sex" id="Checkbox6" value="Max"/>
+                                </div>
+                                <div class="checkboxtext">Labeltext</div>
+                                <div style="clear:both;"></div>
+                            </div>
+                            <br /> <br /><br /> 
+                        </div>
+                        <div id="propertiessave">
+                            <div class="shadow">&nbsp;</div>
+                            <div class="propertiessavebutton">
+                                <span>Save Properties</span>
+                            </div>
+                        </div>
+                         <div class="panel_content_loader">
+                            <img src="images/spinner_black.gif" width="27" height="27" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+         </div>
+    </div>
+    <div id="footer">
+        <div id="footer_left">
+             <img src="images/footer_left.png" />
+        </div>
+        <div id="footer_right">
+            <img src="images/footer_right.png" />
+            
+        </div>
+        
+        
+    </div>
+    <script type='text/javascript'>
+    
+    $('html').click(function () { 
+            $('#' + openedpopover).popover('hide'); 
+        }); 
+        
+        $('.menuicons').click(function (event) { 
+            event.stopPropagation(); 
+        });
+
+
+        //Check if IE and add ie class to html
+        if ($.browser.msie) {
+            $("html").addClass("IE");
+            ie = true;
+        }
+
+        //Init clickscroll
+        $(function () {
+
+            // Set header viewport to follow viewport scroll on x axis
+            $('#viewport, #header_viewport').
+                scrollsync({ targetSelector: '#viewport', axis: 'x' });
+
+            // Set drag scroll on first descendant of class dragger on both selected elements
+            $('#viewport, #inner').
+                dragscrollable({ dragSelector: '.dragger:first', acceptPropagatedEvent: false });
+        });
+
+        //Add popovers
+        $('#popoverexport').popover({ "placement": "bottom", "html": "true", "trigger": "manual" })
+        $('#popoverexport').click({ url: "popover_export.html" }, get_data_for_popover_and_display);
+
+        $('#popovernewdoc').popover({ "placement": "bottom", "html": "true", "trigger": "manual" })
+        $('#popovernewdoc').click({ url: "popover_newdoc.html" }, get_data_for_popover_and_display);
+
+        $('#popovermanage').popover({ "placement": "bottom", "html": "true", "trigger": "manual" })
+        $('#popovermanage').click({ url: "popover_manage.html" }, get_data_for_popover_and_display);
+
+        $('#popoversave').popover({ "placement": "bottom", "html": "true", "trigger": "manual" })
+        $('#popoversave').click({ url: "popover_save.html" }, get_data_for_popover_and_display);
+
+        $('#popoversaveas').popover({ "placement": "bottom", "html": "true", "trigger": "manual" })
+        $('#popoversaveas').click({ url: "popover_saveas.html" }, get_data_for_popover_and_display);
+
+        $('#popoverobject').popover({ "placement": "bottom", "html": "true", "trigger": "manual" })
+        $('#popoverobject').click({ url: "popover_object.html" }, get_data_for_popover_and_display);
+
+        //Add options slider
+        $('.slider-frame').click(function () {
+
+            if ($(this).next('input[type="checkbox"]').attr("checked")) {
+                $(this).children('span').removeClass('on').html('OFF').parent().next('input[type="checkbox"]').removeAttr('checked');
+
+            } else {
+                $(this).children('span').addClass('on').html('ON').parent().next('input[type="checkbox"]').attr('checked', 'checked');
+
+            }
+        });
+
+
+        //Add Events to Tabs
+        $('#objectscontainer-tabs').delegate('div', 'click', function () {
+            objectTabSwitch($(this).index());
+        });
+
+        //Add Events to Accordion
+        $('#objectscontainer-tabs-content-accordion').delegate('.box_title', 'click', function () {
+            objectAccordionSwitch($(this).parent().index());
+        });
+
+
+        //Placeholder fallback for older browsers
+        $('input[placeholder], textarea[placeholder]').placeholder();
+
+        //Create Datepicker Textfield
+        $(function () {
+            $("#datepicker").datepicker({
+                showOn: "button",
+                buttonImage: "images/icon_properties_form_calendar.png",
+                buttonImageOnly: true
+            });
+        });
+
+        //Custom Scroller
+            $(function () {
+                $('.scroll-pane').jScrollPane({
+                    autoReinitialise: true,
+                    verticalGutter: 7,
+                    verticalDragMinHeight: 30,
+                    verticalDragMaxHeight: 30,
+                    horizontalDragMinWidth: 30,
+                    horizontalDragMaxWidth: 30 }
+                    );
+            });
+
+        //Stuff after load
+        $(window).load(function () {
+           
+            autoresizeEditLayout(); // Resize Layout on start
+            $('#content').fadeIn('slow', function () { }); // FadeIn Content
+            $('.uniform').uniform(); // Uniform all Properties Checkboxes
+            $('.dragElement').draggable({
+                opacity: 0.35,
+                scroll: true,
+                refreshPositions: true,
+                start: function (event, ui)
+                {
+                    if (ie) {
+                        baseTop = 0;
+                        baseLeft = 0;
+                    } else {
+                        baseTop = ui.position.top - ui.position.top / zoomlevelbase;
+                        baseLeft = ui.position.left - ui.position.left / zoomlevelbase;
+                    }
+                },
+
+                drag: function (event, ui)
+                {
+                        ui.position.top = ui.position.top / zoomlevelbase + baseTop;
+                        ui.position.left = ui.position.left / zoomlevelbase + baseLeft;
+                        checkBaseSize($(this));
+                }
+            });
+
+            checkBaseSize();
+            $('.textcontainer').ThreeDots({ max_rows: 2 });
+            $('.textcontainer').tooltip({ 'placement': 'top', delay: { show: 1000, hide: 0 } })
+
+            $('.dragElement').click(function () {
+                selectObject($(this));
+            });
+
+            //Calc SVG Scale for Title
+
+            factorTitleSVG = 1.0;
+
+            width = ($('.svgtitle').width() * factorTitleSVG);
+            height = ($('.svgtitle').height() * factorTitleSVG);
+            $('.svgtitle').css('width', width + 'px');
+            $('.svgtitle').css('height', height + 'px');
+           
+        });
+
+        //Funktion to dynamicly rearange the elements
+        $(function () {
+            $(window).resize(function () {autoresizeEditLayout();});
+        });
+
+    </script>
+</body>
+</html>

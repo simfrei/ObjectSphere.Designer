@@ -1,0 +1,110 @@
+﻿<div class="filenav">
+    <div class="private">
+        <a href="#">Private Files</a>
+    </div>
+    <div class="icons">
+        <a href="#">
+            <img src="images/icon_popover_file_up.png" border="0" />
+        </a>
+    </div>
+    <div class="foldertitle">..\ Application Management</div>
+    <div id="folders">
+        <ul>
+            <li><a href="#">Interfaces</a></li>
+             <li><a href="#">Service Level Agreements</a></li>
+             <li><a href="#">Incidents</a></li>
+             <li><a href="#">Support Team</a></li>
+             <li><a href="#" class="active">People</a></li>
+             <li><a href="#">Data Objects</a></li>
+             <li><a href="#">Help Documents</a></li>
+             <li><a href="#">Companies</a></li>
+        </ul>
+    </div>
+
+</div>
+<div class="content">
+
+   <div id="filelistwrapper">
+    <div class="filelistwrapperheader">
+        <table id="filelistheader">
+            <tr>
+                <td class="filetitle">Name</td>
+                <td style="width:100px;" class="filetitle">Last Modify</td>
+                <td style="width:100px;" class="filetitle last">Private</td>
+            </tr>
+        </table>
+    </div>
+   <div class="filelistwrappertable">
+    <table id="filelisttable">
+    </table>
+    </div>
+       <div style="clear:both;"></div>
+        <script>
+            $.getJSON('json/filelist.json', function (data) {
+
+                var obj = data;
+                DrawingsArr = obj.Objects;
+                table = '';
+             
+                for (var i = 0; i < DrawingsArr.length; i++) {
+                    table = table +'<tr id="'+ DrawingsArr[i].$id +'">'
+                    table = table + '<td>' + DrawingsArr[i].DisplayText + '</td>' + '<td style="width:100px;">12/12/2012</td>' + '<td style="width:100px;">' + DrawingsArr[i].Properties[0].Value + '</td>';
+                    table = table +'</tr>'
+                }
+            
+                if (DrawingsArr.length < 17) {
+
+                    for (var i = 0; i < 17 - DrawingsArr.length; i++) {
+
+                        table = table + '<tr>'
+                        table = table + '<td>&nbsp;</td><td></td><td></td>';
+                        table = table + '</tr>'
+                    }
+                    $('#filelisttable').html(table);
+
+                }
+
+                $('#filelistwrapper').scroll($.debounce(250, true, function () {
+
+                    if ($('#filelistwrapper').scrollTop() > 50) {
+                        $('.filelistwrapperheader').fadeTo(100, 0);
+                    }
+                    else {
+                        $('.filelistwrapperheader').fadeTo(0, 1);
+
+                    }
+
+                }));
+
+                $('#filelistwrapper').scroll($.debounce(250, function () {
+
+                    $('.filelistwrapperheader').css({ 'top': $('#filelistwrapper').scrollTop() });
+
+                    $('.filelistwrapperheader').animate({
+                        top: $('#filelistwrapper').scrollTop(),
+                        opacity: 1
+                    }, { duration: 'fast' });
+
+                }));
+
+                selectedDrawId = '';
+
+                $('#filelisttable tr').click(function () {
+                    $('#filelisttable td').removeClass("highlight");
+                    $(this).find('td').addClass("highlight");                    selectedDrawId = $(this).attr('id');
+
+                });         
+
+            });
+
+        </script>
+    </div>
+    <div class="boxaction">
+        <div class="buttoncontainer"><input class="buttonstandard" type="button" value="Load" onClick="loadDrawing(selectedDrawId);"/></div>
+         <div class="buttoncontainer"><input class="buttonstandard" type="button" value="Edit" onclick="editDrawing('modal_edit.html',selectedDrawId)" /></div>
+        <div class="buttoncontainer"><input class="buttonstandard" type="button" value="Delete" /></div>
+    </div>
+    <div id="popover_content_loader">
+    	<img src="images/spinner_black.gif" width="27" height="27" />
+    </div>
+</div>
