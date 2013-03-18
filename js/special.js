@@ -19,7 +19,7 @@ function goFullscreen(){
           
             $('#objects').draggable();
             $('#properties').draggable();
-            $('#fullscreen').toggleClass("active");
+            $('#fullscreen').addClass("active");
             
             saveobjectleft = $('#objects').css('left');
             saveobjecttop = $('#objects').css('top');
@@ -43,7 +43,9 @@ function goFullscreen(){
             $('#objects').css('left',0);  
             
             $('#properties').css('left',savepropertiesleft);
-            $('#properties').css('top',savepropertiestop);       
+            $('#properties').css('top',savepropertiestop);   
+            
+            $('#fullscreen').removeClass("active");
             
             autoresizeEditLayout();          
         }   
