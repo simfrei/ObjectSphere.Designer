@@ -13,44 +13,42 @@ function goFullscreen(){
     
     if(!fullscreen){
         
-    $('body').addClass('fullscreen');
+        $('body').addClass('fullscreen');
         
-            fullscreen=true;
-          
-            $('#objects').draggable();
-            $('#properties').draggable();
-            $('#fullscreen').addClass("active");
-            
-            saveobjectleft = $('#objects').css('left');
-            saveobjecttop = $('#objects').css('top');
-            
-            savepropertiesleft = $('#properties').css('left');
-            savepropertiestop = $('#properties').css('top');
-            
-            
-            $('#properties').draggable();
-            
-            autoresizeEditLayout();     
-        }
-        else {
-            fullscreen=false;
-            
-            $('body').removeClass('fullscreen');
-            $('#objects').draggable('destroy');
-            $("#properties" ).draggable('destroy');
-            
-            $('#objects').css('top',saveobjecttop);  
-            $('#objects').css('left',0);  
-            
-            $('#properties').css('left',savepropertiesleft);
-            $('#properties').css('top',savepropertiestop);   
-            
-            $('#fullscreen').removeClass("active");
-            
-            autoresizeEditLayout();          
-        }   
+        fullscreen=true;
+      
+        $('#objects').draggable();
+        $('#properties').draggable();
+    
+        $('#fullscreen').addClass("active");
+        
+        saveobjectleft = $('#objects').css('left');
+        saveobjecttop = $('#objects').css('top');        
+        savepropertiesleft = $('#properties').css('left');
+        savepropertiestop = $('#properties').css('top');         
+        
+        autoresizeEditLayout();     
     }
-
+    else {
+            
+        fullscreen=false;
+        
+        $('body').removeClass('fullscreen');
+        
+        $('#objects').draggable('destroy');
+        $("#properties" ).draggable('destroy');
+        
+        $('#fullscreen').removeClass("active");
+    
+        $('#objects').css('top',saveobjecttop);  
+        $('#objects').css('left',0);  
+        
+        $('#properties').css('left',savepropertiesleft);
+        $('#properties').css('top',savepropertiestop);   
+        
+        autoresizeEditLayout();          
+    }   
+}
 
 
 function autoresizeEditLayout() {
