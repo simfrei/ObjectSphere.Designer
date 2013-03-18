@@ -46,3 +46,5 @@
 {"ts":1363612684006,"patch":[[{"diffs":[[0,"ute;\n    bottom:"],[-1,"0"],[1,"1"],[0,"px;\n    width:19"]],"start1":6425,"start2":6425,"length1":33,"length2":33}]],"length":23604,"saved":false}
 {"ts":1363612819743,"patch":[[{"diffs":[[0,"creen {\n"],[-1,"    position:fixed;\n"],[0,"}\n\n\n.ful"]],"start1":23404,"start2":23404,"length1":36,"length2":16}]],"length":23584,"saved":false}
 {"ts":1363612980330,"patch":[[{"diffs":[[0," #viewport {"],[1,"\n\n     border:none;\n}\n\n.fullscreen #app {"],[0,"\n     left:1"]],"start1":23324,"start2":23324,"length1":24,"length2":65},{"diffs":[[0,"ortant;\n"],[-1,"     border:none;\n"],[0,"}\n\n.full"]],"start1":23398,"start2":23398,"length1":34,"length2":16}]],"length":23607,"saved":false}
+{"ts":1363616017716,"patch":[[{"diffs":[[0,"t;\n\n}\n\n\n"],[1,".fullscreen .jspDrag {\n    left:5px;\n}\n\n"],[0,"\n\n\n\n    "]],"start1":23586,"start2":23586,"length1":16,"length2":56}]],"length":23647,"saved":false}
+{"ts":1363616265595,"patch":[[{"diffs":[[0," {\n    left:"],[-1,"5"],[1,"3"],[0,"px;\n}\n\n\n\n\n\n "]],"start1":23614,"start2":23614,"length1":25,"length2":25}]],"length":23647,"saved":false}

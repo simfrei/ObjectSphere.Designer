@@ -17,8 +17,7 @@ function goFullscreen(){
         
         fullscreen=true;
       
-        $('#objects').draggable();
-        $('#properties').draggable();
+ 
         
         $('#objects').css('top','0px');  
     
@@ -37,8 +36,7 @@ function goFullscreen(){
         
         $('body').removeClass('fullscreen');
         
-        $('#objects').draggable('destroy');
-        $("#properties" ).draggable('destroy');
+
         
         $('#fullscreen').removeClass("active");
     
