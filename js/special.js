@@ -4,10 +4,34 @@ var baseTop;
 var baseLeft;
 var ie = false;
 var fullscreen= false;
+var properties= false;
 var saveobjectleft;
 var saveobjecttop;
 var savepropertiesleft;
 var savepropertiestop;
+
+function viewProperties(){
+    
+    
+     if(!properties){
+    
+         properties=true;
+         $('body').addClass('properties');
+        $('#properties').css('top','0px');  
+
+        autoresizeEditLayout();     
+
+     }
+     
+     else{
+        properties=false;
+        $('body').removeClass('properties');
+        autoresizeEditLayout();    
+  
+
+         
+     }
+}
 
 function goFullscreen(){
     
@@ -18,7 +42,8 @@ function goFullscreen(){
         fullscreen=true;
       
  
-        
+                $('#properties').css('top','0px');  
+
         $('#objects').css('top','0px');  
     
         $('#fullscreen').addClass("active");
@@ -46,7 +71,8 @@ function goFullscreen(){
         $('#properties').css('left',savepropertiesleft);
         $('#properties').css('top',savepropertiestop);   
         
-         $('#objects_content .scroll-pane').css({ 'height': '' });
+         $('.scroll-pane').css({ 'height': '' });
+
 
         
         autoresizeEditLayout();          
@@ -102,10 +128,11 @@ function autoresizeEditLayout() {
     }
     else{
         
-         $('#viewport').css({ 'width': ($(window).width()-192) + 'px' });
-         $('#viewport').css({ 'height': $(window).height() + 'px' });
-         
+         $('#viewport').css({ 'width':''});
+         $('#viewport').css({ 'height':''});       
           $('#objects_content .scroll-pane').css({ 'height': ($(window).height()-138) + 'px' });
+          $('#properties_content .scroll-pane').css({ 'height': ($(window).height()-98) + 'px' });
+
         
     }
 }
