@@ -3,10 +3,56 @@ var zoomlevelbase = 1;
 var baseTop;
 var baseLeft;
 var ie = false;
+var fullscreen= false;
+var saveobjectleft;
+var saveobjecttop;
+var savepropertiesleft;
+var savepropertiestop;
+
+function goFullscreen(){
+    
+    if(!fullscreen){
+        
+    $('body').addClass('fullscreen');
+        
+            fullscreen=true;
+          
+            $('#objects').draggable();
+            $('#properties').draggable();
+            $('#fullscreen').toggleClass("active");
+            
+            saveobjectleft = $('#objects').css('left');
+            saveobjecttop = $('#objects').css('top');
+            
+            savepropertiesleft = $('#properties').css('left');
+            savepropertiestop = $('#properties').css('top');
+            
+            
+            $('#properties').draggable();
+            
+            autoresizeEditLayout();     
+        }
+        else {
+            fullscreen=false;
+            
+            $('body').removeClass('fullscreen');
+            $('#objects').draggable('destroy');
+            $("#properties" ).draggable('destroy');
+            
+            $('#objects').css('top',saveobjecttop);  
+            $('#objects').css('left',0);  
+            
+            $('#properties').css('left',savepropertiesleft);
+            $('#properties').css('top',savepropertiestop);       
+            
+            autoresizeEditLayout();          
+        }   
+    }
 
 
 
 function autoresizeEditLayout() {
+    if(!fullscreen){
 	
 
     if ($(window).width() > 1025) {
@@ -50,6 +96,13 @@ function autoresizeEditLayout() {
 
     $('#objects').css({ 'top': (($('#viewport').height() / 2) - ($('#objects_content').height() / 2)) + 'px' });
     $('#properties').css({ 'top': (($('#viewport').height() / 2) - ($('#properties_content').height() / 2)) + 'px' });
+    }
+    else{
+        
+         $('#viewport').css({ 'width': $(window).width() + 'px' });
+         $('#viewport').css({ 'height': $(window).height() + 'px' });
+        
+    }
 }
 
 function autoresizeLoginLayout() {
@@ -102,7 +155,7 @@ function selectObject(object) {
         srcTemp = $('.dragElement.active').find('img').attr("src");
         srcTemp = srcTemp.replace('_pink.svg', '.svg');
         $('.dragElement.active').find('img').attr("src", srcTemp);
-        $('.dragElement.active').removeClass("active")
+        $('.dragElement.active').removeClass("active");
    }
 
     srcTemp = object.find('img').attr("src");
@@ -164,10 +217,10 @@ function loadModal(url) {
 function loadDrawing(id) {
 
     if (id) {
-        alert("load:" + id)
+        alert("load:" + id);
     }
     else {
-        alert('No Drawing selected!')
+        alert('No Drawing selected!');
     }
 }
 
@@ -178,7 +231,7 @@ function editDrawing(url,id) {
       
     }
     else {
-        alert('No Drawing selected!')
+        alert('No Drawing selected!');
     }
 }
 
@@ -198,8 +251,8 @@ function checkBaseSize(object) {
         maxLeft = maxLeft > (parseInt($(this).css('left'), 10)) ? maxLeft : parseInt($(this).css('Left'), 10);
     });
 
-    $('#base').css({ 'width': maxLeft + 100 + 'px' })
-    $('#base').css({ 'height': maxTop + 75 + 'px' })
+    $('#base').css({ 'width': maxLeft + 100 + 'px' });
+    $('#base').css({ 'height': maxTop + 75 + 'px' });
 }
 
 function scaleBase(type) {
