@@ -19,6 +19,8 @@ function goFullscreen(){
       
         $('#objects').draggable();
         $('#properties').draggable();
+        
+        $('#objects').css('top','0px');  
     
         $('#fullscreen').addClass("active");
         
@@ -45,6 +47,9 @@ function goFullscreen(){
         
         $('#properties').css('left',savepropertiesleft);
         $('#properties').css('top',savepropertiestop);   
+        
+         $('#objects_content .scroll-pane').css({ 'height': '' });
+
         
         autoresizeEditLayout();          
     }   
@@ -99,8 +104,10 @@ function autoresizeEditLayout() {
     }
     else{
         
-         $('#viewport').css({ 'width': $(window).width() + 'px' });
+         $('#viewport').css({ 'width': ($(window).width()-192) + 'px' });
          $('#viewport').css({ 'height': $(window).height() + 'px' });
+         
+          $('#objects_content .scroll-pane').css({ 'height': ($(window).height()-138) + 'px' });
         
     }
 }
