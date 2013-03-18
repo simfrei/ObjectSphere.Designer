@@ -343,7 +343,7 @@ border-bottom:1px solid #e1e1e1;
 
 #content #objects #objects_content #objectsnew {
     position:absolute;
-    bottom:0px;
+    bottom:1px;
     width:190px;
 }
 
@@ -356,12 +356,13 @@ border-bottom:1px solid #e1e1e1;
 }
 
 #content #objects #objects_content #objectsnew .objectsnewbutton {
-    border-TOP:1px solid #e1e1e1;
+    border-top:1px solid #e1e1e1;
     padding:10px 0px 10px 10px;
     background: url(../images/icon_objects_new-relation.png) no-repeat 11px center ;
     font-weight:bold;
     cursor:pointer;
     color: grey;
+    background-color:white;
 
 }
 
@@ -1210,23 +1211,26 @@ padding-left:30px;
 
 .fullscreen #content #objects {
     position:fixed;
-    z-index:200;
-    top:50px;
-    left:50px;
+    z-index:12200;
+    top:0px;
+    left:0px;
     opacity:0.9;
+    border:none;
     border-right:1px solid #d4d4d4;
+    bottom:0px;
 }
 
 
 
 .fullscreen #content #properties {
     position:fixed;
-    z-index:200;
+    z-index:12200;
     top:50px;
     right:50px;
     display:block;
     opacity:0.9;
     border-left:1px solid #d4d4d4;
+    display:none;
 }
 
 .fullscreen #content {
@@ -1235,15 +1239,33 @@ padding-left:30px;
 }
 
 .fullscreen #viewport {
-     left:0px !important;
+
      border:none;
 }
 
+.fullscreen #app {
+     left:192px !important;
+}
+
 .fullscreen #fullscreen {
- position:fixed;
 }
 
 
+.fullscreen #content #objects #objects_content {
+    
+    height:auto;
+}
+
+.fullscreen #content #objects #objects_content {
+
+  height:auto !important;
+
+}
+
+
+.fullscreen .jspDrag {
+    left:3px;
+}
 
 
 
