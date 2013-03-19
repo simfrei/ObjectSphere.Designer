@@ -1220,6 +1220,7 @@ padding-left:30px;
     border:none;
     border-right:1px solid #d4d4d4;
     bottom:0px;
+    background-color:white;
 }
 
 
@@ -1233,6 +1234,7 @@ padding-left:30px;
     opacity:0.9;
     border-left:1px solid #d4d4d4;
     display:none;
+    background-color:white;
 }
 
 .fullscreen #content {
@@ -1323,6 +1325,27 @@ padding-left:30px;
 .fullscreen #content #properties #properties_content {
     height:auto !important;
 
+}
+
+#preview {
+    
+    width:200px;
+    height:180px;
+    border:1px solid grey;
+    position:absolute;
+    bottom:100px;
+    right:25px;
+    background-color:white;
+    opacity:0.8;
+    
+}
+
+.fullscreen #preview {
+    
+
+    bottom:25px;
+    right:25px;
+    
 }
 
 

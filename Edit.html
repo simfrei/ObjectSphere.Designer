@@ -157,7 +157,7 @@
 
 	                  </div>
                      <div id="viewproperties" onClick="javascript:viewProperties();"></div>
-
+                     <div id="preview"><div id="preview_content"></div></div>
                      <div id="fullscreen" onClick="javascript:goFullscreen();"></div>
 
                     <div id="options">
@@ -417,7 +417,13 @@
                         ui.position.left = ui.position.left / zoomlevelbase + baseLeft;
                         checkBaseSize($(this));
                 }
+                
+                
+             
+                
             });
+            
+            
 
             checkBaseSize();
             $('.textcontainer').ThreeDots({ max_rows: 2 });
@@ -442,6 +448,35 @@
         $(function () {
             $(window).resize(function () {autoresizeEditLayout();});
         });
+        
+        var savepreview =$('#preview_content').html();;
+        
+           window.setInterval(function() {
+               
+               
+               
+               
+                   $('#preview_content').fadeOut('fast');
+    
+                   $('#preview_content').html($('#base').html());
+                   
+                   savepreview = $('#base').html();
+    
+                   
+                   $('#preview_content .textcontainer').remove()
+                   
+                   if($('#base').width() > $('#base').height()){
+                     $('#preview_content').css('zoom',(200/$('#base').width()))
+                   }else
+                   {
+                        $('#preview_content').css('zoom',(180/$('#base').height()))
+                       
+                   }
+                   $('#preview_content').fadeIn('fast');
+               
+
+
+                }, 3000);
 
     </script>
 </body>
