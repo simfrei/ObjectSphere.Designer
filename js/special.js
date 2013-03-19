@@ -16,7 +16,10 @@ function viewProperties(){
      if(!properties){
     
          properties=true;
-         $('body').addClass('properties');
+                 $('body').addClass('properties');
+
+           $('#viewproperties').addClass("active");
+
         $('#properties').css('top','0px');  
 
         autoresizeEditLayout();     
@@ -26,6 +29,8 @@ function viewProperties(){
      else{
         properties=false;
         $('body').removeClass('properties');
+                   $('#viewproperties').removeClass("active");
+
         autoresizeEditLayout();    
   
 
