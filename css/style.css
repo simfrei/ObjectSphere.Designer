@@ -23,7 +23,7 @@ p {
 
 a:hover {
     text-decoration:none;
-    color:#CC0000;
+    color:#CC0000;s
 }
 
 select {
@@ -1387,7 +1387,9 @@ position:absolute;
 zoom:1;
 height:140px;
 width:200px;
-    
+-moz-transform-origin:0 0;
+top:0;
+left:0;
 }
 
 

@@ -473,11 +473,17 @@
 
                             
                              $('#preview_content').css('zoom',Math.round(210/$('#base').width()*100)/100);
+                             
+                              $('#preview_content').css('-moz-transform','scale('+Math.round(210/$('#base').width()*100)/100+')');
+                             
+                            
 
                            }else
                            {
 
                                 $('#preview_content').css('zoom',Math.round(140/$('#base').height()*100)/100);
+                                 $('#preview_content').css('-moz-transform',Math.round(140/$('#base').height()*100)/100);
+                                  $('#preview_content').css('-moz-transform','scale('+Math.round(140/$('#base').height()*100)/100+')');
     
                                
                            }
