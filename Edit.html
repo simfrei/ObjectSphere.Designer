@@ -158,7 +158,7 @@
 	                  </div>
                      <div id="viewproperties" onClick="javascript:viewProperties();"></div>
                      <div id="viewpreview" onClick="javascript:viewPreview();"></div>
-                     <div id="preview" style="width;200px; height:140px;"><div id="preview_content"></div></div>
+                     <div id="preview"><div id="preview_content"></div></div>
                      <div id="fullscreen" onClick="javascript:goFullscreen();"></div>
 
                     <div id="options">
@@ -452,45 +452,9 @@
         var oldpreview = "2"
         
            window.setInterval(function() {
-               
-                    if(preview){
-                        
-                        actualpreview = $('#preview_content').html();
-                        
-                        if(oldpreview != $('#base').html())
-                        {
-                        
-                  
-                           $('#preview_content').html($('#base').html());   
-            
-                           $('#preview_content .textcontainer').remove();
-                           
-                           oldpreview = $('#base').html();
-                   
-                   
-                           if(($('#base').width()/210*140) > $('#base').height()){
-                               
-
-                            
-                             $('#preview_content').css('zoom',Math.round(210/$('#base').width()*100)/100);
-                             
-                              $('#preview_content').css('-moz-transform','scale('+Math.round(210/$('#base').width()*100)/100+')');
-                             
-                            
-
-                           }else
-                           {
-
-                                $('#preview_content').css('zoom',Math.round(140/$('#base').height()*100)/100);
-                                 $('#preview_content').css('-moz-transform',Math.round(140/$('#base').height()*100)/100);
-                                  $('#preview_content').css('-moz-transform','scale('+Math.round(140/$('#base').height()*100)/100+')');
-    
-                               
-                           }
-                       }
-                   
-                    }
-                  
+                 if(preview){
+                   renderPreview();   
+                 }
                
 
 

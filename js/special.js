@@ -14,27 +14,52 @@ var savepropertiestop;
 function viewPreview(){
         
      if(!preview){
-    
          preview=true;
-
+        renderPreview();  
          $('#viewpreview').addClass("active");
          $('#preview').fadeIn("fast");
-
-
-     }
-     
+         
+     }    
      else{
         preview=false;
         $('#viewpreview').removeClass("active");
         $('#preview').fadeOut("fast");
-
-
          
      }
 }
 
-function viewProperties(){
+
+function renderPreview(){     
+                      
+    actualpreview = $('#preview_content').html();
     
+    if(oldpreview != $('#base').html())
+    {
+      
+       $('#preview_content').html($('#base').html());   
+
+       $('#preview_content .textcontainer').remove();
+       
+       oldpreview = $('#base').html();
+  
+       if(($('#base').width()/210*140) > $('#base').height()){       
+         $('#preview_content').css('zoom',Math.round(210/$('#base').width()*100)/100);
+         $('#preview_content').css('-moz-transform','scale('+Math.round(210/$('#base').width()*100)/100+')');
+       }else
+       {
+            $('#preview_content').css('zoom',Math.round(140/$('#base').height()*100)/100);
+            $('#preview_content').css('-moz-transform',Math.round(140/$('#base').height()*100)/100);
+            $('#preview_content').css('-moz-transform','scale('+Math.round(140/$('#base').height()*100)/100+')');
+       
+       }
+   }
+          
+}
+
+
+
+
+function viewProperties(){
     
      if(!properties){
     
