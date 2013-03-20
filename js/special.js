@@ -4,11 +4,34 @@ var baseTop;
 var baseLeft;
 var ie = false;
 var fullscreen= false;
+var preview = false;
 var properties= false;
 var saveobjectleft;
 var saveobjecttop;
 var savepropertiesleft;
 var savepropertiestop;
+
+function viewPreview(){
+        
+     if(!preview){
+    
+         preview=true;
+
+         $('#viewpreview').addClass("active");
+         $('#preview').fadeIn("fast");
+
+
+     }
+     
+     else{
+        preview=false;
+        $('#viewpreview').removeClass("active");
+        $('#preview').fadeOut("fast");
+
+
+         
+     }
+}
 
 function viewProperties(){
     

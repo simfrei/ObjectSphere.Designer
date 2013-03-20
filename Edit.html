@@ -157,7 +157,8 @@
 
 	                  </div>
                      <div id="viewproperties" onClick="javascript:viewProperties();"></div>
-                     <div id="preview"><div id="preview_content"></div></div>
+                     <div id="viewpreview" onClick="javascript:viewPreview();"></div>
+                     <div id="preview" style="width;200px; height:140px;"><div id="preview_content"></div></div>
                      <div id="fullscreen" onClick="javascript:goFullscreen();"></div>
 
                     <div id="options">
@@ -448,35 +449,46 @@
         $(function () {
             $(window).resize(function () {autoresizeEditLayout();});
         });
-        
-        var savepreview =$('#preview_content').html();;
+        var oldpreview = "2"
         
            window.setInterval(function() {
                
-               
-               
-               
-                   $('#preview_content').fadeOut('fast');
+                    if(preview){
+                        
+                        actualpreview = $('#preview_content').html();
+                        
+                        if(oldpreview != $('#base').html())
+                        {
+                        
+                  
+                           $('#preview_content').html($('#base').html());   
+            
+                           $('#preview_content .textcontainer').remove();
+                           
+                           oldpreview = $('#base').html();
+                   
+                   
+                           if(($('#base').width()/210*140) > $('#base').height()){
+                               
+
+                            
+                             $('#preview_content').css('zoom',Math.round(210/$('#base').width()*100)/100);
+
+                           }else
+                           {
+
+                                $('#preview_content').css('zoom',Math.round(140/$('#base').height()*100)/100);
     
-                   $('#preview_content').html($('#base').html());
+                               
+                           }
+                       }
                    
-                   savepreview = $('#base').html();
-    
-                   
-                   $('#preview_content .textcontainer').remove()
-                   
-                   if($('#base').width() > $('#base').height()){
-                     $('#preview_content').css('zoom',(200/$('#base').width()))
-                   }else
-                   {
-                        $('#preview_content').css('zoom',(180/$('#base').height()))
-                       
-                   }
-                   $('#preview_content').fadeIn('fast');
+                    }
+                  
                
 
 
-                }, 3000);
+                }, 5000);
 
     </script>
 </body>
