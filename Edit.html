@@ -157,7 +157,8 @@
 
 	                  </div>
                      <div id="viewproperties" onClick="javascript:viewProperties();"></div>
-
+                     <div id="viewpreview" onClick="javascript:viewPreview();"></div>
+                     <div id="preview"><div id="preview_content"></div></div>
                      <div id="fullscreen" onClick="javascript:goFullscreen();"></div>
 
                     <div id="options">
@@ -169,14 +170,7 @@
                                     <span class="slider-button on">ON</span>
                                 </div>
                                 <input type="checkbox" checked="checked" style="display:none"/>
-                                <!--
-                                 <div class="slider-label">Arrows</div>
-                                <div class="slider-frame">
-                                
-                                    <span class="slider-button">OFF</span>
-                                </div>
-                                <input type="checkbox"  style="display:none"/>
-                                -->
+                              
                             </div>
                               <div id="zoom">
                                  <div class="zoom-plus" onclick="scaleBase('plus')"><img src="images/icon_options_zoom-plus.png" border="0" /></div>
@@ -417,7 +411,13 @@
                         ui.position.left = ui.position.left / zoomlevelbase + baseLeft;
                         checkBaseSize($(this));
                 }
+                
+                
+             
+                
             });
+            
+            
 
             checkBaseSize();
             $('.textcontainer').ThreeDots({ max_rows: 2 });
@@ -442,6 +442,16 @@
         $(function () {
             $(window).resize(function () {autoresizeEditLayout();});
         });
+        var oldpreview = "2"
+        
+           window.setInterval(function() {
+                 if(preview){
+                   renderPreview();   
+                 }
+               
+
+
+                }, 5000);
 
     </script>
 </body>
